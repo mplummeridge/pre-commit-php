@@ -1,6 +1,7 @@
 - id: php-lint
-  name: PHP Syntax Check (Quick)
+  name: PHP Syntax Check
   description: Runs "php -l" on all staged files.
+  stages: [commit]
   entry: php -l
   language: system
   files: \.php$
@@ -8,6 +9,7 @@
 - id: php-unit
   name: PHP Unit
   description: Runs PHP Unit tests on all staged files.
+  stages: [commit]
   entry: pre_commit_hooks/php-unit.sh
   language: script
   files: \.php$
@@ -15,6 +17,7 @@
 - id: php-cs
   name: PHP Codesniffer
   description: Run PHP Codesniffer on all staged files.
+  stages: [commit]
   entry: pre_commit_hooks/php-cs.sh
   language: script
   files: \.php$
@@ -22,6 +25,7 @@
 - id: php-cbf
   name: PHP Code Beautifier and Fixer
   description: Run PHP Code Beautifier and Fixer on all staged files.
+  stages: [commit]
   entry: pre_commit_hooks/php-cbf.sh
   language: script
   files: \.php$
@@ -29,6 +33,7 @@
 - id: php-cs-fixer
   name: PHP Coding Standards Fixer
   description: Run php coding standards fixer against all staged files.
+  stages: [commit]
   entry: pre_commit_hooks/php-cs-fixer.sh
   language: script
   files: \.php$
