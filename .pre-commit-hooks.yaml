@@ -37,3 +37,10 @@
   entry: pre_commit_hooks/php-cs-fixer.sh
   language: script
   files: \.php$
+
+- id: ticket-reference
+  name: Add Ticket Reference
+  description: Checks current branch for JIRA style ticket reference.
+  stages: [commit-msg]
+  entry: pre_commit_hooks/commit-msg-ticket-reference.sh
+  language: script
